@@ -10,7 +10,7 @@ public class VetServiceMap extends AbstructCrudMapService<Vet, Long> implements 
 
 	@Override
 	public Vet save(Vet object) {
-		return super.save(object, object.getId());
+		return save(object, object.getId());
 	}
 
 }

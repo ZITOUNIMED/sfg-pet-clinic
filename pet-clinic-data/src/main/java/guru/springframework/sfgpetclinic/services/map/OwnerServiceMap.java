@@ -10,7 +10,7 @@ public class OwnerServiceMap extends AbstructCrudMapService<Owner, Long> impleme
 
 	@Override
 	public Owner save(Owner object) {
-		return super.save(object, object.getId());
+		return save(object, object.getId());
 	}
 
 }
