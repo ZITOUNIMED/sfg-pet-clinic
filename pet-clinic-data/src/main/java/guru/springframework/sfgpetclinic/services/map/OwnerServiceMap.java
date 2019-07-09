@@ -9,8 +9,9 @@ import guru.springframework.sfgpetclinic.services.OwnerService;
 public class OwnerServiceMap extends AbstructCrudMapService<Owner, Long> implements OwnerService {
 
 	@Override
-	public Owner save(Owner object) {
-		return save(object, object.getId());
+	protected Long addIdToEntity(Owner entity) {
+		Long id = entitiesSize() + 1L;
+		entity.setId(id);
+		return id;
 	}
-
 }

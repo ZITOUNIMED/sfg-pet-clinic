@@ -9,8 +9,10 @@ import guru.springframework.sfgpetclinic.services.PetService;
 public class PetServiceMap extends AbstructCrudMapService<Pet, Long> implements PetService {
 
 	@Override
-	public Pet save(Pet object) {
-		return save(object, object.getId());
+	protected Long addIdToEntity(Pet entity) {
+		Long id = entitiesSize() + 1L;
+		entity.setId(id);
+		return id;
 	}
 
 }
